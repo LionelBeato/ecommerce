@@ -24,18 +24,17 @@ public class Cart {
 	@Column(name = "cart_id")
 	private Long id; 
 	
-//	@OneToMany(mappedBy = "line_item")
-//	private List<HashMap<LineItem, Integer>> lineItems;
-//	
-//	
-//	public List<HashMap<LineItem, Integer>> getLineItems() {
-//		return lineItems;
-//	}
-//	
-//	public void setLineItems(List<HashMap<LineItem, Integer>> lineItems) {
-//		this.lineItems = lineItems;
-//	}
-//	
+	public List<HashMap<Product, Integer>> getLineItems() {
+		return lineItems;
+	}
+
+	public void setLineItems(List<HashMap<Product, Integer>> lineItems) {
+		this.lineItems = lineItems;
+	}
+
+	@OneToMany(targetEntity=Product.class, fetch=FetchType.EAGER)
+	private List<HashMap<Product, Integer>> lineItems;
+
 	public Double getSubTotal() {
 		return subTotal;
 	}

@@ -6,5 +6,8 @@ import com.tts.ecommerce.model.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
+	
+	public Role findByRole(String role);
+
 
 }
