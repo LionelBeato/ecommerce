@@ -24,4 +24,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 	
 	@Query("SELECT DISTINCT product.category FROM Product product")
 	public List<String> findDistinctCategories(); 
+	
+	
 }
